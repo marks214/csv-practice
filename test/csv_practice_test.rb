@@ -5,7 +5,7 @@ require 'minitest/spec'
 require 'minitest/autorun'
 require 'minitest/reporters'
 require 'minitest/pride'
-require "minitest/skip_dsl"
+require 'minitest/skip_dsl'
 require 'pry'
 
 require_relative '../lib/csv_practice'
@@ -16,7 +16,7 @@ REQUIRED_OLYMPIAN_FIELDS = %w[ID Name Height Team Year City Sport Event Medal]
 MEDAL_TOTALS_FILENAME = 'data/medal_totals.csv'
 OLYMPIC_DATA_FILENAME = 'data/athlete_events.csv'
 
-describe "CSV and Enumerables Exercise" do
+describe 'CSV and Enumerables Exercise' do
 
   describe 'get_all_olympic_athletes' do
     it 'returns an array of Olympic athletes hashes with the correct information' do
@@ -92,8 +92,8 @@ describe "CSV and Enumerables Exercise" do
     end
   end
 
-  xdescribe 'get_all_gold_medalists' do
-    
+  describe 'get_all_gold_medalists' do
+
     it 'returns an array of gold medalists' do
       # Arrange
       data = get_all_olympic_athletes(OLYMPIC_DATA_FILENAME)
@@ -105,7 +105,7 @@ describe "CSV and Enumerables Exercise" do
       expect(all_gold_medalists).must_be_instance_of Array
       all_gold_medalists.each do |medalist|
         expect(medalist).must_be_instance_of Hash
-        expect(medalist['Medal']).must_equal "Gold"
+        expect(medalist['Medal']).must_equal 'Gold'
       end
     end
 
